@@ -19,7 +19,7 @@ module.exports.run = async function({ api, event, Users, Threads }) {
     console.log(2)
     if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
         console.log(1)
-        return api.sendMessage("✨🍀Moe Bot✨🍀\n[🍀] Kết nối thành công\n [🌸] Dấu lệnh / \n [⌛] Admin :https://www.facebook.com/profile.php?id=100079441723196", threadID, async () => {
+        return api.sendMessage("✨🍀Moe Bot✨🍀\n[😆] Kết nối thành công\n [🌸] Dấu lệnh / \n [⌛] Admin :https://www.facebook.com/liuliu1202", threadID, async () => {
             let check = true;
             while (check) {
                 setTimeout(() => check = false, 30 * 1000);
@@ -46,7 +46,7 @@ module.exports.run = async function({ api, event, Users, Threads }) {
 
             const threadData = global.data.threadData.get(parseInt(threadID)) || {};
             const path = join(__dirname, "cache", "joinGif");
-            const pathGif = join(path, `hi.jpg`);
+            const pathGif = join(path, `join.mp4`);
 
             var mentions = [], nameArray = [], memLength = [], i = 0;
             
@@ -64,7 +64,7 @@ module.exports.run = async function({ api, event, Users, Threads }) {
             }
             memLength.sort((a, b) => a - b);
             
-          	(typeof threadData.customJoin == "undefined") ? msg = "[🍀Mirai Bot🍀] =>Chào Mừng {name}!\n[🍀Moe Bot🍀]Chào mừng đã đến với {threadName}!\n[🍀Moe Bot🍀]{type} là thành viên thứ {soThanhVien} của nhóm❤️\n[🍀Moe Bot🍀]Chúc {type} có một {time} vui vẻ\n[🍀Moe Bot🍀]Ngày vào: {fullYear}"  : msg = threadData.customJoin;
+          	(typeof threadData.customJoin == "undefined") ? msg = "[🥺Moe Bot🥺] =>Chào Mừng {name}!\n[🥺Moe Bot🥺]Chào mừng đã đến với {threadName}!\n[🥺Moe Bot🥺]{type} là thành viên thứ {soThanhVien} của nhóm❤️\n[🥺Moe Bot🥺]Chúc {type} có một {time} vui vẻ\n[🥺Moe Bot🥺]Ngày vào: {fullYear}"  : msg = threadData.customJoin;
             msg = msg
             .replace(/\{name}/g, nameArray.join(', '))
             .replace(/\{type}/g, (memLength.length > 1) ?  'các bạn' : 'bạn')
